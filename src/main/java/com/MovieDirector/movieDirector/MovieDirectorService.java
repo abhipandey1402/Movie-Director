@@ -9,9 +9,8 @@ public class MovieDirectorService {
     @Autowired
     MovieDirectorRepository movieDirectorRepository;
 
-    public String addMovieDirector(String movie, String director){
-        String response = movieDirectorRepository.addMovieDirector(movie, director);
-        return response;
+    public void addMovieDirector(MovieDirectorPair pair){
+        movieDirectorRepository.addMovieDirector(pair);
     }
 
     public String getDirectorByMovie(String movie){

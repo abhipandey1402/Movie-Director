@@ -13,9 +13,8 @@ public class MovieDirectorController {
     MovieDirectorService movieDirectorService;
 
     @PostMapping("/add-movie-director")
-    public ResponseEntity<String> addMovieDirector(@RequestParam() String movie, String director){
-        String response = movieDirectorService.addMovieDirector(movie, director);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    public void addMovieDirector(@RequestBody() MovieDirectorPair pair){
+        movieDirectorService.addMovieDirector(pair);
     }
 
     @GetMapping("/get-director-by-movie")

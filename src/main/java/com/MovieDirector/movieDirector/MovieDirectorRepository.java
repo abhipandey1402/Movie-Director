@@ -11,9 +11,8 @@ public class MovieDirectorRepository {
 
     HashMap<String, String> movieDirectorDb = new HashMap<>();
 
-    public String addMovieDirector(String movie, String director){
-       movieDirectorDb.put(movie, director);
-        return "Movie Director Pair Added Successfully";
+    public void addMovieDirector(MovieDirectorPair pair){
+       movieDirectorDb.put(MovieDirectorPair.getMovie() , MovieDirectorPair.getDirector());
     }
 
     public String getDirectorByMovie(String movie){
